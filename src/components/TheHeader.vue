@@ -38,7 +38,6 @@ nav {
 .nav-menu {
   display: flex;
 }
-
 .nav-menu .btn {
   margin-left: 15px;
   background: #1D4A81;
@@ -53,13 +52,8 @@ nav {
 .logo {
   padding: 10px 0;
 }
-
 .logo img {
   width: 150px;
-}
-
-@media screen and (max-width: 1139px) {
- 
 }
 @media screen and (max-width: 768px) {
   nav {
@@ -75,7 +69,7 @@ nav {
   }
   .nav-menu .btn {
   margin-left: 0;
-}
+  }
 }
 @media (max-width:480px) {
   nav {
