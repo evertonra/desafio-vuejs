@@ -33,13 +33,11 @@ footer {
   position: relative;
   margin-top: 40px;
 }
-
 .footer {
   align-content: center;
   display: flex;
   justify-content: space-around;
 }
-
 .logo {
   display: flex;
   align-content: center;
@@ -48,7 +46,6 @@ footer {
   width: 250px;
   align-self: center;
 }
-
 .nav-menu ul {
   margin: 20px 0 ;
 }
@@ -62,13 +59,6 @@ footer {
 }
 .nav-menu ul li a{
   color: #fff;
-}
-
-@media screen and (max-width: 1139px) {
- 
-}
-@media screen and (max-width: 768px) {
-  
 }
 @media (max-width:480px) {
   footer {

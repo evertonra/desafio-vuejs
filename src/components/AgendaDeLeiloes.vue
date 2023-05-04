@@ -4,14 +4,12 @@
     <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.length">
       <div class="card-leiloes" v-for="leilao in leiloes" :key="leilao.id">
         <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
-          <!-- <img v-if="leilao.image" :src="leilao.image" alt=""> -->
           <img v-if="leilao.image" src="../../api/img/img1.jpg" alt="">
           <h2>{{leilao.name}}</h2>
           <p >{{ leilao.date }}</p>
           <a href="">Mais informações</a>
           <p>Assista ao leilão agora!</p>
           <button class="btn">Mais Informações</button>
-            
         </router-link>
         </div>
     </div>
@@ -23,30 +21,18 @@
 
 <script>
   import { api } from ".//services.js"
-  // import serialize from "../helpers.js"
   
 export default {
   name: "AgendaDeLeiloes",
-  components: {
-    // LeiloesPaginar
-  },
     data() {
         return {
             leiloes: null, 
         }
     },
-    computed: {
-      // url() {
-      //   // A princípio não será utilizado ************
-      //   const query = serialize(this.$route.query);
-      //   return `/leilao?_limit=${this.leiloesPorPagina}${query}`;
-      // }
-    },
     methods: {
         getLeiloesAoVivo() {
             api.get("http://localhost:3000/data").then(response => {
-              this.leiloesTotal = Number(response.headers["x-total-count"])
-                this.leiloes = response.data
+              this.leiloes = response.data
             })
         }
     },
@@ -75,7 +61,6 @@ export default {
 .card-leiloes a {
   margin: 20px 0;
 }
-
 .card img {
   border-radius: 4px;
   margin-bottom: 20px;
@@ -102,7 +87,6 @@ h2 {
 p {
   padding: 10px 0;
 }
-
 @media screen and (max-width: 1139px) {
   .leiloes-ao-vivo {
     max-width: 800px;

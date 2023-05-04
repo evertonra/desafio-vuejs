@@ -1,9 +1,5 @@
-// import { createStore } from 'vuex'
-// import Vue from "vue"
 import Vuex from "vuex"
 import {api} from "../components/services.js"
-
-// Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
@@ -43,8 +39,5 @@ export default new Vuex.Store({
       return api.post("/usuario", payload)
     },
   },
-  
-  modules: {
-  }
 })
 

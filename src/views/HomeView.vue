@@ -2,9 +2,7 @@
   <section>
     <img class="banner" src="../assets/banner1.jpg" alt="">
     <LeiloesAoVivo />
-    
     <AgendaDeLeiloes />
-
   </section>
 </template>
 
@@ -27,7 +25,7 @@ export default {
 }
 h1 {
   font-size: 2rem;
-  color: #87f;
+  color: #e04d20;
   margin-top: 40px;
   text-align: center;
 }
