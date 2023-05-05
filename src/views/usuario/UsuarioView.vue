@@ -5,7 +5,6 @@
     </UsuarioForm>
     <ErroNotificacao :erros="erros"/>
   </section>
-  
 </template>
 
 <script>

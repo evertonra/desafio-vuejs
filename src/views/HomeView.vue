@@ -2,9 +2,7 @@
   <section>
     <img class="banner" src="../assets/banner1.jpg" alt="">
     <LeiloesAoVivo />
-    
     <AgendaDeLeiloes />
-
   </section>
 </template>
 

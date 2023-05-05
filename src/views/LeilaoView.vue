@@ -32,7 +32,6 @@ export default {
       getLeiloes() {
         api.get(`http://localhost:3000/data/${this.id}`).then(response => {
           this.leilao = response.data
-          console.log(response)
         })
       }
   },

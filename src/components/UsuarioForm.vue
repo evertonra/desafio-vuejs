@@ -21,6 +21,7 @@
       <label for="estado">Estado</label>
       <input id="estado" name="estado" type="text" v-model="estado">
       <div class="button">
+        <!-- slot para gerar o botão -->
         <slot></slot>
       </div>
     </form>
