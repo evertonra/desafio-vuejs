@@ -24,15 +24,14 @@ import LoginCriar from '../components/LoginCriar.vue'
 export default {
   name: 'LoginView',
   components: {
-    LoginCriar
+    LoginCriar,
   },
   data() {
     return {
       login: {
         email: "",
         senha: ""
-      },
-      erros: []
+      }
     };
   },
   methods: {
