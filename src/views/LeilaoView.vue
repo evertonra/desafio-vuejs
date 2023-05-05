@@ -13,7 +13,7 @@
       <h2>Mais informações:</h2>
       <p>Confira alguns itens que estarão disponíveis no leilão.</p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/BmqWfWoVrE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
+    </div> 
   </section>
 </template>
 
@@ -32,7 +32,6 @@ export default {
       getLeiloes() {
         api.get(`http://localhost:3000/data/${this.id}`).then(response => {
           this.leilao = response.data
-          console.log(response)
         })
       }
   },

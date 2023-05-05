@@ -15,12 +15,10 @@
     <div v-else-if="leiloes && leiloes.length === 0">
       <p>Nenhum leilão ao vivo no momento. Tente mais tarde</p>
     </div>
-      
   </section>
 </template>
 
 <script>
-// import axios from 'axios'
   import { api } from ".//services.js"
 
 export default {
@@ -35,10 +33,7 @@ export default {
     methods: {   
       getLeiloesAoVivo() {
           api.get("http://localhost:3000/data").then(response => {
-            this.leiloesTotal = Number(response.headers["x-total-count"])
-              this.leiloes = response.data
-                
-              console.log(response)
+            this.leiloes = response.data
           })
       }
     },
@@ -59,7 +54,6 @@ export default {
 .card-leiloes a {
   margin: 20px 0;
 }
-
 .card img {
   border-radius: 4px;
 }
@@ -75,7 +69,6 @@ h1 {
   text-align: center;
   background: #1D4A81;
   padding: 20px 40px;
-  /* display: inline-block; */
 }
 h2 {
   font-size: 1.2rem;
@@ -85,7 +78,6 @@ h2 {
 p {
   padding: 10px 0;
 }
-
 .card button {
   align-self: center;
 }
@@ -121,6 +113,4 @@ p {
     font-size: 1.6rem;
   }
 }
- 
-
 </style>

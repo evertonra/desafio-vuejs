@@ -69,7 +69,7 @@ nav {
   }
   .nav-menu .btn {
   margin-left: 0;
-}
+  }
 }
 @media (max-width:480px) {
   nav {

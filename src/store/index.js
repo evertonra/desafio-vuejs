@@ -1,7 +1,6 @@
 import Vuex from "vuex"
 import {api} from "../components/services.js"
 
-// Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     login: false,
@@ -40,8 +39,5 @@ export default new Vuex.Store({
       return api.post("/usuario", payload)
     },
   },
-  
-  modules: {
-  }
 })
 

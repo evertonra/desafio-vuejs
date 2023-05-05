@@ -11,6 +11,18 @@
       "bairro": "tal",
       "cidade": "Nova Petrópolis",
       "estado": "RS"
+    },
+    {
+      "id": "teste2@teste.com",
+      "nome": "Éverton Rafael Adams",
+      "email": "teste2@teste.com",
+      "senha": "1234",
+      "cep": "1234",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "estado": ""
     }
   ],
   "data": [

@@ -26,7 +26,6 @@ const routes = [
     component: LeilaoView,
     props: true
   },
-  
 ]
 
 const router = createRouter({

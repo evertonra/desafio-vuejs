@@ -4,7 +4,6 @@
     <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.length">
       <div class="card-leiloes" v-for="leilao in leiloes" :key="leilao.id">
         <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
-          <!-- <img v-if="leilao.image" :src="leilao.image" alt=""> -->
           <img v-if="leilao.image" src="../../api/img/img1.jpg" alt="">
           <h2>{{leilao.name}}</h2>
           <p >{{ leilao.date }}</p>
@@ -33,8 +32,7 @@ export default {
     methods: {
         getLeiloesAoVivo() {
             api.get("http://localhost:3000/data").then(response => {
-              this.leiloesTotal = Number(response.headers["x-total-count"])
-                this.leiloes = response.data
+              this.leiloes = response.data
             })
         }
     },

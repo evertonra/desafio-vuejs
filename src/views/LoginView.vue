@@ -58,7 +58,6 @@ h1 {
 form {
   display: grid;
 }
-
 .btn {
   width: 100%;
   max-width: 300px;

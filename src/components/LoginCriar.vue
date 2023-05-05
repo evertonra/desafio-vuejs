@@ -37,14 +37,12 @@ h2 {
   margin-top: 40px;
   margin-bottom: 10px;
 }
-
 .btn {
   width: 100%;
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
-
 .btn-form {
   max-width: 100%;
 }
