@@ -11,7 +11,6 @@
           <a href="">Mais informações</a>
           <p>Assista ao leilão agora!</p>
           <button class="btn">Mais Informações</button>
-            
         </router-link>
         </div>
     </div>
@@ -23,24 +22,13 @@
 
 <script>
   import { api } from ".//services.js"
-  // import serialize from "../helpers.js"
   
 export default {
   name: "AgendaDeLeiloes",
-  components: {
-    // LeiloesPaginar
-  },
     data() {
         return {
             leiloes: null, 
         }
-    },
-    computed: {
-      // url() {
-      //   // A princípio não será utilizado ************
-      //   const query = serialize(this.$route.query);
-      //   return `/leilao?_limit=${this.leiloesPorPagina}${query}`;
-      // }
     },
     methods: {
         getLeiloesAoVivo() {
@@ -75,7 +63,6 @@ export default {
 .card-leiloes a {
   margin: 20px 0;
 }
-
 .card img {
   border-radius: 4px;
   margin-bottom: 20px;
@@ -102,7 +89,6 @@ h2 {
 p {
   padding: 10px 0;
 }
-
 @media screen and (max-width: 1139px) {
   .leiloes-ao-vivo {
     max-width: 800px;

@@ -7,7 +7,6 @@
       <label for="senha">Senha</label>
       <input type="password" name="senha" id="senha" v-model="login.senha">
       <button class="btn" @click.prevent="logar">Logar</button>
-      <ErroNotificacao :erros="erros"/>
     </form>
     <p class="perdeu">
       <a
@@ -25,15 +24,14 @@ import LoginCriar from '../components/LoginCriar.vue'
 export default {
   name: 'LoginView',
   components: {
-    LoginCriar
+    LoginCriar,
   },
   data() {
     return {
       login: {
         email: "",
         senha: ""
-      },
-      erros: []
+      }
     };
   },
   methods: {
@@ -51,14 +49,12 @@ export default {
   margin: 0 auto;
   padding: 0 20px;
 }
-
 h1 {
   text-align: center;
   font-size: 2rem;
   margin-top: 40px;
   color: #e04d20;
 }
-
 form {
   display: grid;
 }
@@ -73,10 +69,8 @@ form {
   text-align: center;
   margin: 20px auto 0 auto;
 }
-
 .perdeu a:hover {
   color: #e04d20;
   text-decoration: underline;
 }
-
 </style>

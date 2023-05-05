@@ -1,7 +1,6 @@
 <template>
   <section>
     <h2>Crie a Sua Conta</h2>
-    <ErroNotificacao :erros="erros"/>
     <button v-if="!criar" class="btn" @click="criar = true">Criar Conta</button>
     <UsuarioForm v-else>
       <button class="btn btn-form" @click.prevent="criarUsuario">Criar Usuário</button>
@@ -24,13 +23,9 @@ export default {
     },
     methods: {
       async criarUsuario() {
-        try{
-        await this.$store.dispatch("criarUsuario", this.$store.state.usuario)
-        await this.$store.dispatch("getUsuario", this.$store.state.usuario.email)
+        this.$store.dispatch("criarUsuario", this.$store.state.usuario)
+        this.$store.dispatch("getUsuario", this.$store.state.usuario.email)
         this.$router.push("/usuario");
-        } catch (error) {
-          console.log(error)
-        }
       }
     }
 }

@@ -50,11 +50,9 @@ export default {
     })
   }
 }
-
 </script>
 
 <style scoped>
-
 .button {
   grid-column: 2;
   margin-top: 10px;

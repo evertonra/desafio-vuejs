@@ -1,9 +1,7 @@
 <template>
   <section >
     <h1>Leiolões ao vivo:</h1>
-    <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.length">
-      
-        
+    <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.length"> 
           <div class="card-leiloes" v-for="leilao in leiloes" :key="leilao.id" >
             <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
               <img  src="../../api/img/img1.jpg" alt="">
@@ -13,8 +11,6 @@
               <button class="btn">Mais Informações</button>
             </router-link>
           </div>
-        
-
     </div>
     <div v-else-if="leiloes && leiloes.length === 0">
       <p>Nenhum leilão ao vivo no momento. Tente mais tarde</p>

@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 import TheHeader from "./components/TheHeader.vue"
 import TheFooter from "./components/TheFooter.vue"
 
@@ -20,13 +19,11 @@ export default ({
     TheHeader,
     TheFooter
   },
-  
   created() {
     document.title = "Desafio Vuejs"
   }
 })
 </script>
-
 
 <style>
 * {
@@ -36,11 +33,9 @@ body, ul, li, h1,h2,p {
   padding: 0px;
   margin: 0px;
 }
-
 ul {
   list-style: none;
 }
-
 body{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: #345;
@@ -54,7 +49,6 @@ img {
   max-width: 100%;
   display: block;
 }
-
 .btn {
   display: block;
   padding: 10px 30px;
@@ -70,12 +64,10 @@ img {
   cursor: pointer;
   z-index: 12;
 }
-
 .btn:hover {
   background: #e04d20;
   transform: scale(1.1);
 }
-
 #app {
   display: flex;
   min-height: 100vh;
@@ -87,7 +79,6 @@ img {
 label {
   margin-bottom: 5px;
 }
-
 input,
 textarea {
   border-radius: 4px;
@@ -100,7 +91,6 @@ textarea {
   margin-bottom: 15px;
   width: 100%;
 }
-
 input:hover,
 input:focus,
 textarea:hover,

@@ -1,6 +1,5 @@
 <template>
   <section class="card-section">
-    
     <div class="card">
       <img src="../../api/img/img1.jpg" alt="">
       <h2>{{leilao.name}}</h2>
@@ -10,13 +9,11 @@
       <a href="https://bis365.com.br/bid365/storage/catalogs/wlf2FPSZEmJy2fRxy3sfERdM8urA8l11oSuUQpWu.pdf" target="_blank" class="btn" >Catálogo</a>
       <button class="btn">Regulamento</button>
     </div>
-
     <div class="card-video">
       <h2>Mais informações:</h2>
       <p>Confira alguns itens que estarão disponíveis no leilão.</p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/BmqWfWoVrE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-            
   </section>
 </template>
 
@@ -51,7 +48,6 @@ export default {
   justify-content: center;
   margin: 0 auto;
 }
-
 .card-video {
   display: flex;
   flex-direction: column;
@@ -65,13 +61,10 @@ export default {
   margin-left: 40px;
   flex: 0;
 }
-
 .card-video p, h2 {
   align-self: start;
   margin-bottom: 20px;
 }
-
-
 .card {
   display: flex;
   flex-direction: column;
@@ -84,7 +77,6 @@ export default {
   transition: all 0.2s;
   max-width: 400px;
 }
-
 .card img {
   border-radius: 4px;
   max-width: 300px;
@@ -105,17 +97,14 @@ p{
   width: 25px;
   display: inline-block;
 }
-
 .card-infos {
   display: flex;
   justify-content: center;
   padding: 10px 0;
 }
-
 .card-infos p {
   margin-left: 10px;
 }
-
 .btn{
   width: 60%;
   align-self: center;
