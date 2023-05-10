@@ -1,10 +1,13 @@
 <template>
   <section >
     <h1>Leiolões ao vivo:</h1>
-    <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.length"> 
-          <div class="card-leiloes" v-for="leilao in leiloes" :key="leilao.id" >
+    <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.data.length"> 
+          <div class="card-leiloes" v-for="leilao in leiloes.data" :key="leilao.id" >
+            
             <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
-              <img  src="../../api/img/img1.jpg" alt="">
+              <img  src="https://bis365.com.br/bid365/storage/lots/zNBSZLCxvryeOJWRtYn5TDUaobxtKQi1MS0yATg2.jpg" alt="">
+              
+              <img  :src="leilao.image.src" alt="">
               <h2>{{leilao.name}}</h2>
               <p>{{ leilao.date }}</p>
               <p>Assista ao leilão agora!</p>
@@ -12,9 +15,10 @@
             </router-link>
           </div>
     </div>
-    <div v-else-if="leiloes && leiloes.length === 0">
+    <div v-else-if="leiloes && leiloes.data.length === 0">
       <p>Nenhum leilão ao vivo no momento. Tente mais tarde</p>
     </div>
+      
   </section>
 </template>
 
@@ -23,18 +27,17 @@
 
 export default {
   name: "LeiloesAoVivo",
+  props: ["id"],
     data() {
         return {
-            leiloes: null, 
-            leiloesPorPagina: 9,
-            leiloesTotal: 0,
+            leiloes: null,
         }
     },
     methods: {   
       getLeiloesAoVivo() {
-          api.get("http://localhost:3000/data").then(response => {
-            this.leiloes = response.data
-          })
+        api.get("https://bis365.com.br/bid365/api/v1/auctions/").then(response => {
+          this.leiloes = response.data
+        })
       }
     },
     created() {
@@ -54,6 +57,7 @@ export default {
 .card-leiloes a {
   margin: 20px 0;
 }
+
 .card img {
   border-radius: 4px;
 }
@@ -69,6 +73,7 @@ h1 {
   text-align: center;
   background: #1D4A81;
   padding: 20px 40px;
+  /* display: inline-block; */
 }
 h2 {
   font-size: 1.2rem;
@@ -78,6 +83,7 @@ h2 {
 p {
   padding: 10px 0;
 }
+
 .card button {
   align-self: center;
 }
@@ -113,4 +119,6 @@ p {
     font-size: 1.6rem;
   }
 }
+ 
+
 </style>
