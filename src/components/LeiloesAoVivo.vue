@@ -1,28 +1,21 @@
 <template>
   <section >
     <h1>Leiolões ao vivo:</h1>
-    <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.length"> 
-          <div class="card-leiloes" v-for="leilao in leiloes" :key="leilao.id" >
+    <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.data.length"> 
+          <div class="card-leiloes" v-for="leilao in leiloes.data" :key="leilao.id" >
+            
             <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
-              <img  src="../../api/img/img1.jpg" alt="">
+              <img  src="https://bis365.com.br/bid365/storage/lots/zNBSZLCxvryeOJWRtYn5TDUaobxtKQi1MS0yATg2.jpg" alt="">
+              
+              <img  :src="leilao.image.src" alt="">
               <h2>{{leilao.name}}</h2>
               <p>{{ leilao.date }}</p>
               <p>Assista ao leilão agora!</p>
               <button class="btn">Mais Informações</button>
             </router-link>
           </div>
-    <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.length">
-      <div class="card-leiloes" v-for="leilao in leiloes" :key="leilao.id" >
-        <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
-          <img  src="../../api/img/img1.jpg" alt="">
-          <h2>{{leilao.name}}</h2>
-          <p>{{ leilao.date }}</p>
-          <p>Assista ao leilão agora!</p>
-          <button class="btn">Mais Informações</button>
-        </router-link>
-      </div>
     </div>
-    <div v-else-if="leiloes && leiloes.length === 0">
+    <div v-else-if="leiloes && leiloes.data.length === 0">
       <p>Nenhum leilão ao vivo no momento. Tente mais tarde</p>
     </div>
       
@@ -34,21 +27,17 @@
 
 export default {
   name: "LeiloesAoVivo",
+  props: ["id"],
     data() {
         return {
-            leiloes: null, 
-            leiloesPorPagina: 9,
-            leiloesTotal: 0,
+            leiloes: null,
         }
     },
     methods: {   
       getLeiloesAoVivo() {
-          api.get("http://localhost:3000/data").then(response => {
-            this.leiloesTotal = Number(response.headers["x-total-count"])
-              this.leiloes = response.data
-                
-              console.log(response)
-          })
+        api.get("https://bis365.com.br/bid365/api/v1/auctions/").then(response => {
+          this.leiloes = response.data
+        })
       }
     },
     created() {

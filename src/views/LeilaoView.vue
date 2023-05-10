@@ -1,18 +1,19 @@
 <template>
   <section class="card-section">
     <div class="card">
-      <img src="../../api/img/img1.jpg" alt="">
-      <h2>{{leilao.name}}</h2>
-      <div class="card-infos"><img class="icon" src="../assets/whatsapp.png" alt=""><p>{{leilao.phone}}</p></div>
-      <div class="card-infos" ><img class="icon" src="../assets/calendario.png" alt=""><p>{{leilao.date}}</p></div>
-      <div class="card-infos"><img class="icon" src="../assets/pin.png" alt=""><p>{{leilao.city}}</p></div>
+      <img :src="leilao.data.image" alt="">
+      <!-- <img src="../../api/img/img1.jpg" alt=""> -->
+      <h2>{{leilao.data.name}}</h2>
+      <div class="card-infos"><img class="icon" src="../assets/whatsapp.png" alt=""><p>{{leilao.data.phone}}</p></div>
+      <div class="card-infos" ><img class="icon" src="../assets/calendario.png" alt=""><p>{{leilao.data.date}}</p></div>
+      <div class="card-infos"><img class="icon" src="../assets/pin.png" alt=""><p>{{leilao.data.city}}</p></div>
       <a href="https://bis365.com.br/bid365/storage/catalogs/wlf2FPSZEmJy2fRxy3sfERdM8urA8l11oSuUQpWu.pdf" target="_blank" class="btn" >Catálogo</a>
       <button class="btn">Regulamento</button>
     </div>
     <div class="card-video">
       <h2>Mais informações:</h2>
       <p>Confira alguns itens que estarão disponíveis no leilão.</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/BmqWfWoVrE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="560" height="315" :src="linkUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </section>
 </template>
@@ -25,13 +26,15 @@ export default {
   props: ["id"],
   data() {
     return {
-      leilao: null, 
+      leilao: null,
+      linkUrl: null,
     }
   },
   methods: {
       getLeiloes() {
-        api.get(`http://localhost:3000/data/${this.id}`).then(response => {
-          this.leilao = response.data
+        api.get(`https://bis365.com.br/bid365/api/v1/auctions/${this.id}`).then(response => {
+            this.leilao = response.data
+            this.linkUrl = response.data.data.link.replace("watch?v=", "embed/")
         })
       }
   },

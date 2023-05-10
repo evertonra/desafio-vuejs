@@ -1,8 +1,9 @@
 <template>
   <section class="agenda-de-leiloes">
-      <h1>Agenda de Leilões:</h1>
-    <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.length">
-      <div class="card-leiloes" v-for="leilao in leiloes" :key="leilao.id">
+    <h1>Agenda de Leilões:</h1>
+    
+    <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.data.length">
+      <div class="card-leiloes" v-for="leilao in leiloes.data" :key="leilao.id">
         <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
           <img v-if="leilao.image" src="../../api/img/img1.jpg" alt="">
           <h2>{{leilao.name}}</h2>
@@ -13,7 +14,7 @@
         </router-link>
         </div>
     </div>
-    <div v-else-if="leiloes && leiloes.length === 0">
+    <div v-else-if="leiloes && leiloes.data.length === 0">
       <p>Nenhum leilão ao vivo no momento. Tente mais tarde</p>
     </div>
   </section>
@@ -31,9 +32,10 @@ export default {
     },
     methods: {
         getLeiloesAoVivo() {
-            api.get("http://localhost:3000/data").then(response => {
-              this.leiloes = response.data
-            })
+          api.get("https://bis365.com.br/bid365/api/v1/auctions/")
+          .then(response => {
+            this.leiloes = response.data
+          })
         }
     },
     created() {
