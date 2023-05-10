@@ -13,7 +13,6 @@ const axiosInstance = axios.create({
   }
   })
 
-
 export const api = {
   get(endpoint) {
     return axiosInstance.get(endpoint)
