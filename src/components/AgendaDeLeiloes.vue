@@ -5,7 +5,7 @@
     <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.data.length">
       <div class="card-leiloes" v-for="leilao in leiloes.data" :key="leilao.id">
         <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
-          <img v-if="leilao.image" src="../../api/img/img1.jpg" alt="">
+          <img :src="imagem + leilao.image" alt="">
           <h2>{{leilao.name}}</h2>
           <p >{{ leilao.date }}</p>
           <a href="">Mais informações</a>
@@ -28,13 +28,13 @@ export default {
     data() {
         return {
             leiloes: null, 
+            imagem: "https://bis365.com.br/bid365/storage/",
         }
     },
     methods: {
         getLeiloesAoVivo() {
-          api.get("https://bis365.com.br/bid365/api/v1/auctions/")
-          .then(response => {
-            this.leiloes = response.data
+          api.get("https://bis365.com.br/bid365/api/v1/auctions/").then(response => {
+          this.leiloes = response.data
           })
         }
     },
