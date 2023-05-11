@@ -3,11 +3,8 @@
     <h1>Leiolões ao vivo:</h1>
     <div class="leiloes-ao-vivo" v-if="leiloes && leiloes.data.length"> 
           <div class="card-leiloes" v-for="leilao in leiloes.data" :key="leilao.id" >
-            
             <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
-              <img  src="https://bis365.com.br/bid365/storage/lots/zNBSZLCxvryeOJWRtYn5TDUaobxtKQi1MS0yATg2.jpg" alt="">
-              
-              <img  :src="leilao.image.src" alt="">
+              <img :src="imagem + leilao.image" alt="">
               <h2>{{leilao.name}}</h2>
               <p>{{ leilao.date }}</p>
               <p>Assista ao leilão agora!</p>
@@ -31,6 +28,7 @@ export default {
     data() {
         return {
             leiloes: null,
+            imagem: "https://bis365.com.br/bid365/storage/",
         }
     },
     methods: {   
@@ -38,7 +36,7 @@ export default {
         api.get("https://bis365.com.br/bid365/api/v1/auctions/").then(response => {
           this.leiloes = response.data
         })
-      }
+      },
     },
     created() {
         this.getLeiloesAoVivo()

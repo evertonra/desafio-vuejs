@@ -3,8 +3,6 @@ import axios from "axios"
 const axiosInstance = axios.create({
   method:'GET',
   baseURL: "https://bis365.com.br/bid365/api/v1/auctions/",
-  URL: "https://bis365.com.br/bid365/api/v1/auctions/I36MYB8DjSpJ4DBcBR6kK2j4yV669f2IWqS5Tq77.jpg",
-  // URL: "https://bis365.com.br/bid365/api/v1/",
   headers: {
     'Content-Type': 'application/json',
     Accept: '*/*',
@@ -22,8 +20,5 @@ export const api = {
   },
   put(endpoint, body) {
     return axiosInstance.put(endpoint, body)
-  },
-  imgsrc(URL) {
-    return URL
   }
 }

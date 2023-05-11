@@ -1,7 +1,7 @@
 <template>
   <section class="card-section">
     <div class="card">
-      <img :src="leilao.data.image" alt="">
+      <img :src="imageSrc" alt="">
       <!-- <img src="../../api/img/img1.jpg" alt=""> -->
       <h2>{{leilao.data.name}}</h2>
       <div class="card-infos"><img class="icon" src="../assets/whatsapp.png" alt=""><p>{{leilao.data.phone}}</p></div>
@@ -28,6 +28,7 @@ export default {
     return {
       leilao: null,
       linkUrl: null,
+      imageSrc: null,
     }
   },
   methods: {
@@ -35,6 +36,9 @@ export default {
         api.get(`https://bis365.com.br/bid365/api/v1/auctions/${this.id}`).then(response => {
             this.leilao = response.data
             this.linkUrl = response.data.data.link.replace("watch?v=", "embed/")
+            console.log(response.data.data.image)
+            this.imageSrc = "https://bis365.com.br/bid365/storage/"+response.data.data.image
+            console.log(this.imageSrc)
         })
       }
   },
