@@ -1,9 +1,5 @@
 # desafio
 
-## Para iniciar o servidor dos arquivos json utilizar:
-```
-json-server --watch "auctions.json"
-```
 
 ## Project setup
 ```
