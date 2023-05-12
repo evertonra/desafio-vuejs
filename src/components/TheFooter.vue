@@ -10,7 +10,9 @@
             <li><router-link to="/">Home</router-link></li>
             <li><router-link to="/">Agenda de leilões</router-link></li>
             <li><router-link to="/">Resultados</router-link></li>
-            <li><router-link to="/login">Minha conta</router-link></li>
+            <li><router-link to="/cadastrar">Cadastrar</router-link></li>
+            <li><router-link to="/logar">Logar</router-link></li>
+
           </ul>
       </div>
     </div> 

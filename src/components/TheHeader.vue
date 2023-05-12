@@ -8,8 +8,8 @@
                 <router-link class="btn" to="/">Home</router-link>
                 <router-link class="btn" to="/">Agenda de Leilões</router-link>
                 <router-link class="btn" to="/">Resultados</router-link>
-                <router-link v-if="$store.state.login" class="btn" to="/usuario">{{ nome }}</router-link>
-                <router-link v-else class="btn" to="/login">Minha conta / Login</router-link>
+                <router-link class="btn" to="/cadastrar">Cadastrar</router-link>
+                <router-link class="btn" to="/logar">Logar</router-link>
             </div> 
         </nav>
     </header>
@@ -18,12 +18,8 @@
 <script>
 export default {
     name: "TheHeader",
-    computed: {
-        nome() {
-            return this.$store.state.usuario.nome.replace(/ .*/, "")
-        }
     }
-}
+
 </script>
 
 <style scoped>
