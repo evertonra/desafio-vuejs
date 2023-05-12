@@ -2,7 +2,6 @@
   <section class="card-section">
     <div class="card">
       <img :src="imageSrc" alt="">
-      <!-- <img src="../../api/img/img1.jpg" alt=""> -->
       <h2>{{leilao.data.name}}</h2>
       <div class="card-infos"><img class="icon" src="../assets/whatsapp.png" alt=""><p>{{leilao.data.phone}}</p></div>
       <div class="card-infos" ><img class="icon" src="../assets/calendario.png" alt=""><p>{{leilao.data.date}}</p></div>
