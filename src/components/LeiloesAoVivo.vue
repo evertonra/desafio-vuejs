@@ -6,7 +6,7 @@
             <router-link class="card" :to="{name: 'leilaoview', params:{id: leilao.id}}">
               <img :src="imagem + leilao.image" alt="">
               <h2>{{leilao.name}}</h2>
-              <p>{{ leilao.date }}</p>
+              <p>{{ formatar_data(leilao.date) }}</p>
               <p>Assista ao leilão agora!</p>
               <button class="btn">Mais Informações</button>
             </router-link>
@@ -21,6 +21,7 @@
 
 <script>
   import { api } from ".//services.js"
+  import moment from 'moment'
 
 export default {
   name: "LeiloesAoVivo",
@@ -37,6 +38,11 @@ export default {
           this.leiloes = response.data
         })
       },
+      formatar_data(value) {
+        if (value) {
+          return moment(String(value)).format('DD/MM/YYYY')
+        }
+      }
     },
     created() {
         this.getLeiloesAoVivo()
